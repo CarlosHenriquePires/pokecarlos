@@ -3,11 +3,10 @@ class ItemsPokemon {
 
   ItemsPokemon.fromJson(Map<String, dynamic> json) {
     List<Pokemon> listTemp = [];
-    for (int i = 0; i < json.length; i++) {
+    for (int i = 0; i < json['results'].length; i++) {
       Pokemon pokemon = new Pokemon(
-        json[i]['name'],
-        json[i]['url'],
-        json['count']
+        json['results'][i]['name'],
+        json['results'][i]['url'],
       );
       listTemp.add(pokemon);
     }
@@ -18,7 +17,6 @@ class ItemsPokemon {
 class Pokemon {
   String name;
   String url;
-  int count;
 
-  Pokemon(this.name, this.url, this.count);
+  Pokemon(this.name, this.url);
 }

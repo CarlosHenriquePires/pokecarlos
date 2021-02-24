@@ -29,6 +29,8 @@ class BlocPokemon{
     }
   }
 
+
+
   dispose(){
     controller?.close();
   }

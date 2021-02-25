@@ -29,7 +29,6 @@ class ApiPokemon {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       });
-      // print(response.body);
       responseJson = returnResponse(response);
     } on SocketException {
       throw FetchDataException('Sem conexão com a internet');

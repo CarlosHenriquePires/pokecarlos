@@ -1,3 +1,5 @@
+import 'package:pokecarlos/models/detailPokemon.dart';
+
 class ItemsPokemon {
   List<Pokemon> listPokemons;
 
@@ -17,6 +19,7 @@ class ItemsPokemon {
 class Pokemon {
   String name;
   String url;
+  DetailPokemon details;
 
   Pokemon(this.name, this.url);
 }

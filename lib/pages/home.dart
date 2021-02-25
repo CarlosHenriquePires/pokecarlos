@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokecarlos/api/apiPokemon.dart';
 import 'package:pokecarlos/api/apiResponse.dart';
 import 'package:pokecarlos/models/pokemon.dart';
 import 'package:pokecarlos/bloc/blocPokemon.dart';
@@ -18,8 +19,10 @@ Widget buildListPokemon(ItemsPokemon items) {
           child: Container(
             child: Column(
               children: [
-                Text(items.listPokemons[i].name),
-                Text(items.listPokemons[i].url),
+                Text(items.listPokemons[i].name.toUpperCase()),
+                Image.network(items.listPokemons[i].details.sprites),
+                Text('Height: ${items.listPokemons[i].details.height}'),
+                Text('Weight: ${items.listPokemons[i].details.weight}'),
               ],
             ),
           ),
@@ -76,7 +79,7 @@ class _HomeState extends State<Home> {
                   }
                 }
                 return Container();
-              })
+              }),
         ],
       ),
     );
